@@ -1,4 +1,3 @@
-//@ts-check
 
 import React from 'react'
 import styled from 'styled-components'
@@ -36,21 +35,36 @@ const Products = styled.div`
 
 const Home = () => {
 
-  const { setPathActive, setIsHome, setIsOpenedMenu, isOpenedMenu } = React.useContext(MenuContext)
-
-  console.log(database);
+  const { setPathDesktopActive, setPathMobileActive, setIsHome, isHome } = React.useContext(MenuContext)
 
   React.useEffect(() => {
 
-    setPathActive(true)
-    setIsHome(true)
-    setIsOpenedMenu(true)
     
+    const handleResize = () => {
+      const {matches} = matchMedia('(max-width: 720px)');
+      if (matches) {
 
-  }, [setPathActive, setIsHome, setIsOpenedMenu])
+        setPathDesktopActive(false)
+        setPathMobileActive(true)
+        
+      } else {
+        
+        setPathDesktopActive(true)
+        setPathMobileActive(false)
+
+      }
+
+    }
+
+    setIsHome(true)
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
 
 
-  console.log(isOpenedMenu);
+  })
+
 
   return (
     

@@ -14,6 +14,11 @@ export const smartphones = [
       mark: "samsung",
       model: "samsung S8",
       price: "7000",    
+    },
+    samsung: {
+      mark: "samsung",
+      model: "samsung S8",
+      price: "7000",    
     }
   }
 ]

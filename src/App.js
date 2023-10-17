@@ -1,4 +1,4 @@
-// @ts-check
+
 
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -10,16 +10,17 @@ import CreateAcount from "./Components/Login/CreateAcount";
 import Error404 from './Components/404/404'
 import MenuContext from './Components/MenuContext'
 import Home from "./Components/Home/Home";
-import Menu from "./Components/Menu/Menu";
 import Pattern from "./Components/Pattern/Pattern";
 import ProductDescription from "./Components/Products/ProductDescription";
 import ProductsCategorie from "./Components/Products/ProductsCategorie";
 import Admin from "./Components/Admin/Admin";
-import AddProduct from "./Components/Admin/AddProduct";
+import DesktopMenu from "./Components/Menu/DesktopMenu";
+import MobileMenu from "./Components/Menu/MobileMenu";
 
 function App() {
 
-  const [pathActive, setPathActive] = React.useState(null)
+  const [pathDesktopActive, setPathDesktopActive] = React.useState(null)
+  const [pathMobileActive, setPathMobileActive] = React.useState(null)
   const [isOpenedMenu, setIsOpenedMenu] = React.useState(null)
   const [isHome, setIsHome] = React.useState(null)
   const [pNavActive, setPNavActive] = React.useState(null)
@@ -31,11 +32,15 @@ function App() {
     <BrowserRouter>
       <GlobalStatesStorage>
         
-        <MenuContext.Provider value={{pathActive, setPathActive, isOpenedMenu, setIsOpenedMenu, setIsHome, isHome, pNavActive, setPNavActive, cNavActive, setCNavActive, patternActive, setPatternActive}}>
+        <MenuContext.Provider value={{pathDesktopActive, setPathDesktopActive, pathMobileActive, setPathMobileActive, isOpenedMenu, setIsOpenedMenu, setIsHome, isHome, pNavActive, setPNavActive, cNavActive, setCNavActive, patternActive, setPatternActive}}>
 
           {
-            pathActive &&
-            <Menu />
+            pathDesktopActive &&
+            <DesktopMenu />
+          }
+          {
+            pathMobileActive &&
+            <MobileMenu />
           }
           <Pattern />
 

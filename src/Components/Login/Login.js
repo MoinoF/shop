@@ -39,13 +39,13 @@ const CreateAcount = styled.div`
 
 const Login = () => {
 
-  const {setPathActive} = React.useContext(MenuContext)
+  const {setPathDesktopActive} = React.useContext(MenuContext)
 
   React.useEffect(() => {
 
-    setPathActive(false)
+    setPathDesktopActive(false)
 
-  }, [setPathActive])
+  }, [setPathDesktopActive])
   
 
   return (

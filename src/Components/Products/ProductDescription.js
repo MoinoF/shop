@@ -1,7 +1,6 @@
 // @ts-check
 
 import React from 'react'
-import { GlobalStatesContext } from '../GlobalStatesContext'
 import { styled } from 'styled-components'
 import { useParams } from 'react-router-dom'
 import { clothes } from '../Database/ClothesDB'
@@ -70,19 +69,45 @@ const ProductImg = styled.img`
 
 const ProductDescription = () => {
 
-  // const {setIsOpenedMenu, isOpenedMenu} = React.useContext(GlobalStatesContext)
-  const {setPathActive, pathActive,setIsOpenedMenu, isOpenedMenu} = React.useContext(MenuContext)
+  // const {setPathDesktopActive, setPathMobileActive, isHome} = React.useContext(MenuContext)
 
-  const { id } = useParams()
+  // const { id } = useParams()
+
+  // React.useEffect(() => {
+
+  //   setPathMobileActive(true)
+  //   setPathDesktopActive(false)
+
+  // }, [setPathMobileActive, setPathDesktopActive])
+
+  const { setPathDesktopActive, setPathMobileActive, setIsHome, isHome } = React.useContext(MenuContext)
 
   React.useEffect(() => {
 
-    setPathActive(true)
-    setIsOpenedMenu(false)
+    
+    const handleResize = () => {
+      const {matches} = matchMedia('(max-width: 720px)');
+      if (matches) {
 
-    console.log(isOpenedMenu);
+        setPathDesktopActive(false)
+        setPathMobileActive(true)
+        
+      } else {
+        
+        setPathDesktopActive(false)
+        setPathMobileActive(true)
 
-  }, [setIsOpenedMenu, setPathActive, isOpenedMenu, pathActive])
+      }
+
+    }
+
+    setIsHome(true)
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+  }, [])
 
   return (
     <Container className='easeIn'>

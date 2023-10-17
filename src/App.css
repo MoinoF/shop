@@ -59,16 +59,6 @@ a.active::before {
   left: -1rem;
 }
 
-/* a.active::before {
-  content: '';
-  display: inline-block;
-  width: 1px;
-  height: 15px;
-  background: var(--primary);
-  position: relative;
-  left: -.353rem;
-  top: 2px;
-} */
 
 .act {
   color: #cccccc;
@@ -117,6 +107,21 @@ img {
   from {
     opacity: 0;
     left: -100%;
+  }
+  to {
+    opacity: initial;
+
+  }
+}
+
+.animeMenuMobile {
+  animation: animeL .3s forwards;
+}
+
+@keyframes animeL {
+  from {
+    opacity: 0;
+    left: -50%;
   }
   to {
     opacity: initial;
