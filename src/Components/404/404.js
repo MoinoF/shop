@@ -41,13 +41,13 @@ const HomeLink = styled.div`
 
 const Page404 = () => {
 
-  const {setPathActive} = React.useContext(MenuContext)
+  const {setPathDesktopActive} = React.useContext(MenuContext)
 
   React.useEffect(() => {
 
-    setPathActive(true)
+    setPathDesktopActive(true)
 
-  }, [setPathActive])
+  }, [setPathDesktopActive])
 
   return (
     <Container className='easeIn'>
