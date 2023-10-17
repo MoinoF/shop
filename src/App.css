@@ -1,0 +1,181 @@
+:root {
+  --background: #1a1a1a;
+  --primary: #ee4541;
+  --primary-hover: #611f1e;
+  --title: #e6e6e6;
+  --paragraph: #cccccc;
+  --admin-header: #212121;
+}
+
+@font-face {
+  font-family: "FuturaBook";
+  src: url(./assets/fonts/futura/Futura\ Book\ font.ttf);
+}
+@font-face {
+  font-family: "Mont";
+  src: url(./assets/fonts/Mont-HeavyDEMO.otf);
+}
+@font-face {
+  font-family: "Bauhaus";
+  src: url(./assets/fonts/BAUHS93.TTF);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  /* max-height: 100vh; */
+  background: #1a1a1a;
+
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ccc;
+}
+
+a.active {
+  color: var(--primary);
+  position: relative;
+  font-weight: bold;
+}
+
+a.active::before {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 20px;
+  background: var(--primary);
+  position: absolute;
+  left: -1rem;
+}
+
+/* a.active::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 15px;
+  background: var(--primary);
+  position: relative;
+  left: -.353rem;
+  top: 2px;
+} */
+
+.act {
+  color: #cccccc;
+}
+
+.hv:hover {
+  color: #eee;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.dark {
+  background: #101010;
+  color: #e6e6e6;
+}
+
+.light {
+  color: #101010;
+  background: #e6e6e6;
+}
+
+
+.animeTop {
+  animation: animeTop 0.6s forwards;
+}
+
+@keyframes animeTop {
+  from {
+    opacity: 0;
+    top: -100%;
+  }
+  to {
+    opacity: initial;
+    top: 0;
+  }
+}
+
+.animeL {
+  animation: animeL .6s forwards;
+}
+
+@keyframes animeL {
+  from {
+    opacity: 0;
+    left: -100%;
+  }
+  to {
+    opacity: initial;
+
+  }
+}
+
+.animeLeft {
+  animation: animeLeft .6s ;
+}
+
+@keyframes animeLeft {
+  0% {
+    opacity: 0;
+    right: 200px;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .0;
+  }
+  75% {
+    opacity: 0;
+  }
+  80% {
+    opacity: .5;
+  }
+  100% {
+    opacity: initial;
+  }
+}
+
+.animeRight {
+  animation: animeRight .3s ;
+}
+
+@keyframes animeRight {
+  from {
+    opacity: 0;
+    left: -100%;
+  }
+  to {
+    opacity: initial;
+
+  }
+}
+
+.easeIn {
+  animation: easeIn .6s ;
+}
+
+@keyframes easeIn {
+
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: initial;
+  }
+}
+
